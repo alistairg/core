@@ -779,7 +779,7 @@ class HueApiV1Endpoints:
 
     async def __async_get_all_lights(self) -> dict:
         """Create a dict of all lights."""
-        result = {}
+        return {} # Pointless getting lights as they don't work on Rithum
         for entity_id in self.ctl.controller_hass.get_entities():
             device = await async_get_device(self.ctl, entity_id)
             if not device.enabled:
